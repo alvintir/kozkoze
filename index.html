@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<Link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+	<title>KozKoze</title>
+</head>
+
+<body>
+	<!-- To discuss with Alvin for spinner for loading pages
+    
+    <div class="spinner-wrapper">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div> -->
+	<nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+		<div class="container"> <a class="navbar-brand logo-text page-scroll" href="index.html">KozKoze</a>
+			<div class="collapse navbar-collapse" id="navbar">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"> <a class="nav-link page-scroll" href="#T2T">Text to Text</a> </li>
+					<li class="nav-item"> <a class="nav-link page-scroll" href="#S2T">Speech to Text</a> </li>
+					<li class="nav-item"> <a class="nav-link page-scroll" href="#S2S">Speech to Speech</a> </li>
+				
+					<button onclick="document.getElementById('modal').style.display='block'" style="width:auto;border-radius: .375rem; margin-left: 140px;" >Login</button>
+
+					<div id="modal" class="modal">
+					
+					<form class="modal-content animate" action="/action_page.php" method="post">
+						<div class="imgcontainer">
+						<span onclick="document.getElementById('modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+						</div>
+
+						<div class="container">
+						<label for="uname"><b>Username</b></label>
+						<input type="text" placeholder="Enter Username" name="uname" required>
+
+						<label for="psw"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="psw" required>
+							
+						<button type="submit">Login</button>
+						<label>
+							<br>
+							<input type="checkbox" checked="checked" name="remember"> Remember me
+						</label>
+						</div>
+
+						<div class="container" >
+						<span class="psw"><a href="#">Forgot password?</a></span>
+						</div>
+					</form>
+					</div>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="text-container">
+						<h3>Your translation service helping get rid of communication barriers</h3>
+            <hr class="separator">
+						<p class="p-large p-heading">KozKoze provides linguistically fluent and culturally competent travel & tourism translation services for travelers trying to communicate with locals in a language that is not native to them</p>
+
+						<a class="btn"  target="_blank" href="#link" id="btn-translate-now" style="background-color:#ed7c3171; color: white;">Translate Now</a>
+
+						<a class="btn" href="#link" id="btn-sign-up" style="background-color: white; color: #ed7c3171";>Sign Up</a> </div>
+				
+				</div>
+				<div class="col-lg-6">
+					<div class="image-container"> <img src="data:image/png;base64,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" alt="Translate Icon" height="200"> </div>
+				</div>
+			</div>
+	</header>	
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="text-container-offer">
+							<h3>What we offer</h3>
+              <hr class="separator">
+							<ul class="list-offer">
+								<li class="li-offer">Extremely fast project turnaround.</li>
+								<li class="li-offer">Unprecedented translation scalability.</li>
+								<li class="li-offer">Digital content and social media translation adept.</li>
+								<li class="li-offer">Higher quality with bilingual subject matter experts.</li>
+								<li class="li-offer">Competitive service through efficiency.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="image-container"> <img src="file:///C:/Users/yesh_/Desktop/cities.png" alt="Cities Icon" height="250"> </div>
+					</div>
+				</div>
+			</div>
+    </div>
+		</div>
+		</div>
+		</div>
+
+    <div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="text-container">
+						<h3>Frequently Asked Questions</h3>
+          </div>
+          <hr class="separator">
+          <div class="accordion" id="accordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" style="color: #ED7D31;border-color: #ED7D31;background-color: white;">
+                  Is the translator application free?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  Our translation app is free. We are currently working on additional features such as additional languages, that will soon be available with an extra fee. Stay tuned!
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo" style="color: #ED7D31;border-color: #ED7D31;background-color: white;" >
+                  Can I still use the translator if I do not have a microphone?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                  Yes you can use the translator app if you do not have a microphone. You may use the Text to Text feature or Text to Speech feature if you have a speaker in your device.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" style="color: #ED7D31;border-color: #ED7D31;background-color: white;">
+                  Is the translation reliable?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                  Our translator is linked to one of the best translation API's. Although we do not guarantee 100% gramatically correct sentences, we do promise that the results will be satisfactory.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour" style="color: #ED7D31;border-color: #ED7D31;background-color: white;">
+                  Do I need internet access to translate my messages?
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                <div class="accordion-body">
+                  Yes you need internet access to translate all of your messages.
+                </div>
+              </div>
+            </div>
+          </div>
+<br>
+		  <div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="text-container">
+						<h3 style="text-align: center;">Most Popular Translation Pairs</h3>
+						<hr class="separator-pairs">
+						<br>
+						<div class="grid-container" style="font-family: Raleway;
+						font-size: 16px;">
+							<div class="grid-item"><i class="em em-flag-mf" aria-role="presentation" aria-label="St. Martin Flag"></i></div>
+							<div class="grid-item"><i class="em em-es" aria-role="presentation" aria-label="Spain Flag"></i></div>
+							<div class="grid-item"><i class="em em-cn" aria-role="presentation" aria-label="China Flag"></i></div>
+							<div class="grid-item">English - French</div>
+							<div class="grid-item">English - Spanish</div>
+							<div class="grid-item">English - Mandarin</div>    
+							<div class="grid-item"><i class="em em-it" aria-role="presentation" aria-label="Italy Flag"></i></div>
+							<div class="grid-item"><i class="em em-flag-mu" aria-role="presentation" aria-label="Mauritius Flag"></i></div>
+							<div class="grid-item"><i class="em em-flag-il" aria-role="presentation" aria-label="Israel Flag"></i></div>
+							<div class="grid-item">English - Italian</div>
+							<div class="grid-item">English - Creole</div>
+							<div class="grid-item">English - Hebrew</div>  
+
+						  </div>
+          </div>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+
+</html>
