@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('partials/header')%>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+</head>
+    <%- include('partials/navbar')%>
+
+    <div class="voiceselection">
+        <select name="voice" id="voices">
+            <option value="">Select a Voice</option>
+        </select>
+        <textarea name="text"> Hello! How are you?</textarea>
+        <button style="background-color:#ed7c31a2" id ="stop">Stop</button>
+        <button style="background-color:#ed7c31a2" id ="speak">Speak</button>
+    </div>
+</body>
+<script src="texttospeech.js" charset="utf-8"></script>
+<%- include('partials/footer')%>
+</html>

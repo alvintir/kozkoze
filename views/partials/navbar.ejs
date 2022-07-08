@@ -1,17 +1,81 @@
-<nav class = "navbar navbar-inverse">
-    <div class ="container-fluid">
-        <div class ="navbar-header">
-            <a style="color:chocolate;font-size: 40px;" class ="navbar-brand"  href ="#"  >KozKoze</a>
-        </div>
-        <ul class ="nav navbar-nav">
-            <li><a style="color:chocolate" href ="#">Text to Text</a></li>
-            <li><a style="color:chocolate" href ="#">Speech to Text</a></li>
-            <li><a style="color:chocolate" href ="#">Speech to Speech</a></li>
-        </ul>
-        <ul class = "nav navbar-nav navbar-right">
-            <li><a style="color:chocolate" href ="#"><span class ="glyphicon glyphicon-user">SignUP</span></a></li>
-            <li><a style="color:chocolate"  href ="#"> Login </span></a></li>
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+    <div class="container"> <a class="navbar-brand logo-text page-scroll" href="/">KozKoze</a>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"> <a class="nav-link page-scroll" href="/translate">Text to Text</a> </li>
+                <li class="nav-item"> <a class="nav-link page-scroll" href="/transcribe">Speech to Text</a> </li>
+                <li class="nav-item"> <a class="nav-link page-scroll" href="/synthesizer">Text to Speech</a> </li>
+            
+                <button onclick="document.getElementById('modal').style.display='block'" style="padding-top:6px;padding: bottom 6px;width:auto;border-radius: .375rem;margin-left: 150px;height: 25px;font-size: 16px;margin-top: 15px;" >Login</button>
+                <button onclick="document.getElementById('modalsignup').style.display='block'" style="padding-top:6px;padding: bottom 6px;width:auto;border-radius: .375rem;margin-left: 20px;height: 25px;font-size: 16px;margin-top: 15px;" >Sign Up</button>
+                <div id="modal" class="modal">
+                
+                    <form class="modal-content animate" action="/action_page.php" method="post">
+                        <div class="imgcontainer">
+                        <span onclick="document.getElementById('modal').style.display='none'" class="close" title="Close modal">&times;</span>
+                        </div>
 
+                        <div class="container">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                            
+                        <button type="submit">Login</button>
+                        <label>
+                            <br>
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                        </div>
+                        
+
+                        <div class="container" >
+                        <span class="psw"><a href="#">Forgot password?</a></span>
+                        </div>
+                    </form>
+                    </div>
+                <div id="modalsignup" class="modal">
+                
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                    <span onclick="document.getElementById('modalsignup').style.display='none'" class="close" title="Close modalsignup">&times;</span>
+                    </div>
+
+                    <div class="container">
+                    <label for="name"><b> Name</b></label>
+                    <input type="text" placeholder="Enter Name" name="name" required>
+
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="mail"><b>Email Address</b></label>
+                    <input type="text" placeholder="Enter Email Address" name="mail" required>
+            
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                        
+                    <button type="submit">Sign Up</button>
+                 
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                   
+                    <br>
+                    <label>
+                        <br>
+                        <input type="checkbox" checked="checked" name="remember"> I accept the <a href="Terms_and_conditions">Terms and Conditions</a>
+                    </label>
+                    </div>
+                    
+
+                    <div class="container" >
+                    <span class="psw">Already a member? <b><a href="#">Login</a></b></a></span>
+                    </div>
+                </form>
+                </div>
+            </ul>
+        </div>
     </div>
 </nav>
