@@ -36,16 +36,19 @@ app.use(express.static('public'));
 // })
 // })
 
+// Home
 app.get('/', (req, res) =>{
     let msg ="Hello World"
     let data="testing tranlation"
     res.render('index.ejs',{Text:msg,TranslatedOutput:data})
 });
 
+// Text-to-Text - input
 app.get ('/translate',(req,res)=>{
     res.render('translate',{translatedText:"",sourceText:""})
 });
 
+// Text-to-Text - output
 app.post('/translate', (req, res) => {  
     // get form data from the request body 
     const text = req.body.text
@@ -57,14 +60,16 @@ app.post('/translate', (req, res) => {
     });
 })
 
-
+// text-to-speech
 app.get ('/synthesizer',(req,res)=>{
     res.render('synthesizer')
 })
 
+// speech-to-text
 app.get ('/transcribe',(req,res)=>{
     res.render('transcribe')
 })
+
 app.get ('/Terms_and_conditions',(req,res)=>{
     res.render('Terms_and_conditions')
 })
