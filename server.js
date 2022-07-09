@@ -4,6 +4,7 @@ const express = require ('express');
 const bodyParser = require('body-parser');
 const translate = require('@vitalets/google-translate-api');
 const app = express();
+const PORT = process.env.PORT || 3050;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -75,4 +76,7 @@ app.get ('/Terms_and_conditions',(req,res)=>{
 })
 
 
-app.listen(3050,()=>console.log('server is listening on the port 3050'));
+// app.listen(3050,()=>console.log('server is listening on the port 3050'));
+app.listen(PORT, () => {
+    console.log(`Listening on port ${ PORT }`);
+});
